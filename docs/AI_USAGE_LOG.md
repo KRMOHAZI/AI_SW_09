@@ -21,3 +21,7 @@
 
 ## M3 결제
 - 주문 소유권, 주문별 진행 Promise, 시도별 결제 기록과 실패 재시도를 구현했다. M3 7/7 통과 (`node --test --test-isolation=none test/m3_payment.test.js`). 구현 재시도 0회. AI 검토, 사람 검토 미수행.
+
+## M4 취소·환불
+- 환불 결과를 먼저 확인하고 성공 시에만 주문 상태와 재고를 변경한다. 주문별 Promise로 동시 취소를 합친다.
+- M4 6/6 통과 (`node --test --test-isolation=none test/m4_cancel.test.js`). 구현 재시도 0회. AI 검토, 사람 검토 미수행.
