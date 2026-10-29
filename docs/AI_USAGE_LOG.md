@@ -13,3 +13,8 @@
 - getCart 직접 검사(빈 목록·합계·복사) 통과, 담기 관련 공개 테스트 8개 통과, 변경 관련 3개 통과, 최종 M1 12/12 통과.
 - 테스트 명령: `node --test --test-isolation=none test/m1_cart.test.js`.
 - maxAddable의 담기/대체 의미 차이를 공개 테스트와 대조하여 PLAN에 기록했다. 구현 재시도 0회. AI가 변경 범위와 검사 후 변경 순서를 확인했다. 사람 검토는 미수행.
+
+## M2 주문
+- canTransition → changeStatus → createOrder 순서로 구현했다. 상태 전이 1개, 상태 변경 2개를 먼저 검증하고 M2 전체 9/9 통과.
+- 검사와 변경을 분리해 부족 상품을 모두 모으며, 동기 구간에서 재고를 차감한다. 스냅샷과 ctx.clock을 사용한다.
+- 명령: `node --test --test-isolation=none test/m2_order.test.js`. 구현 재시도 0회. AI diff 검토, 사람 검토 미수행.
