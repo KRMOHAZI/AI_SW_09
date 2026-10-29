@@ -18,3 +18,6 @@
 - canTransition → changeStatus → createOrder 순서로 구현했다. 상태 전이 1개, 상태 변경 2개를 먼저 검증하고 M2 전체 9/9 통과.
 - 검사와 변경을 분리해 부족 상품을 모두 모으며, 동기 구간에서 재고를 차감한다. 스냅샷과 ctx.clock을 사용한다.
 - 명령: `node --test --test-isolation=none test/m2_order.test.js`. 구현 재시도 0회. AI diff 검토, 사람 검토 미수행.
+
+## M3 결제
+- 주문 소유권, 주문별 진행 Promise, 시도별 결제 기록과 실패 재시도를 구현했다. M3 7/7 통과 (`node --test --test-isolation=none test/m3_payment.test.js`). 구현 재시도 0회. AI 검토, 사람 검토 미수행.
